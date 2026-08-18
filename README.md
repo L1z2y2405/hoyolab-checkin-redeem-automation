@@ -1,4 +1,4 @@
-# Hoyo Auto
+# Hoyoverse Auto Check-in and Redemption Code for Genshin and HSR
 
 Personal HoYoLAB automation for **Genshin Impact** and **Honkai: Star Rail** only.
 

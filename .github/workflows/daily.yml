@@ -2,8 +2,8 @@ name: Daily HoYoLAB Automation
 
 on:
   schedule:
-    # 00:05 ICT (UTC+7) — daily check-in + code redeem
-    - cron: "5 17 * * *"
+    # 07:00 ICT (UTC+7) — daily check-in + code redeem
+    - cron: "0 0 * * *"
   workflow_dispatch:
 
 jobs:

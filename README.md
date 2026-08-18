@@ -128,7 +128,7 @@ Run check-in and code redemption once per day on GitHub-hosted runners.
 
 1. Push this repository to GitHub.
 2. Add repository secret **`HOYOLAB_COOKIE`** (Settings → Secrets and variables → Actions) with the same cookie string used in `.env`.
-3. The workflow in `.github/workflows/daily.yml` runs daily at **00:05 ICT (UTC+7)** and can also be triggered manually (**Actions → Daily HoYoLAB Automation → Run workflow**).
+3. The workflow in `.github/workflows/daily.yml` runs daily at **07:00 ICT (UTC+7)** and can also be triggered manually (**Actions → Daily HoYoLAB Automation → Run workflow**).
 
 Processed redemption codes are cached between runs via GitHub Actions cache (`data/state.json`).
 

@@ -2,6 +2,8 @@
 
 Personal HoYoLAB automation for **Genshin Impact** and **Honkai: Star Rail** only.
 
+![Genshin Impact and Honkai Star Rail](https://i.ytimg.com/vi/ep9fPbcZPos/maxresdefault.jpg)
+
 This tool runs two tasks for each enabled game:
 
 1. **Daily check-in** on HoYoLAB

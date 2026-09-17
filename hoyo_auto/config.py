@@ -14,11 +14,19 @@ def _env_bool(name: str, default: bool) -> bool:
     return raw.strip().lower() in {"1", "true", "yes", "on"}
 
 
+def _env_bool_optional(name: str) -> bool | None:
+    raw = os.getenv(name)
+    if raw is None:
+        return None
+    return raw.strip().lower() in {"1", "true", "yes", "on"}
+
+
 @dataclass(frozen=True)
 class Settings:
     cookie: str
     enable_genshin: bool
-    enable_hsr: bool
+    enable_hsr_checkin: bool
+    enable_hsr_redeem: bool
     state_dir: Path
     log_level: str
     checkin_hour: int
@@ -49,10 +57,15 @@ class Settings:
         if redeem_interval < 1:
             raise ValueError("REDEEM_INTERVAL_MINUTES must be at least 1")
 
+        hsr_master = _env_bool("ENABLE_HSR", True)
+        hsr_checkin = _env_bool_optional("ENABLE_HSR_CHECKIN")
+        hsr_redeem = _env_bool_optional("ENABLE_HSR_REDEEM")
+
         return cls(
             cookie=cookie,
             enable_genshin=_env_bool("ENABLE_GENSHIN", True),
-            enable_hsr=_env_bool("ENABLE_HSR", True),
+            enable_hsr_checkin=hsr_master if hsr_checkin is None else hsr_checkin,
+            enable_hsr_redeem=hsr_master if hsr_redeem is None else hsr_redeem,
             state_dir=state_dir,
             log_level=os.getenv("LOG_LEVEL", "INFO").upper(),
             checkin_hour=checkin_hour,

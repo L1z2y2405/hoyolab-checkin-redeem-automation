@@ -75,7 +75,7 @@ def run_code_redemption(
     enabled_keys = []
     if settings.enable_genshin:
         enabled_keys.append("genshin")
-    if settings.enable_hsr:
+    if settings.enable_hsr_redeem:
         enabled_keys.append("hsr")
 
     for key in enabled_keys:

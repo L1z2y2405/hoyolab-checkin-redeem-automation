@@ -113,8 +113,12 @@ def main(argv: list[str] | None = None) -> int:
 
     setup_logging(settings.log_level)
 
-    if not settings.enable_genshin and not settings.enable_hsr:
-        logger.error("Both ENABLE_GENSHIN and ENABLE_HSR are disabled — nothing to do")
+    if (
+        not settings.enable_genshin
+        and not settings.enable_hsr_checkin
+        and not settings.enable_hsr_redeem
+    ):
+        logger.error("All game tasks are disabled — nothing to do")
         return 2
 
     if args.command == "run":

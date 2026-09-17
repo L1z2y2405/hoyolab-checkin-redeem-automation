@@ -57,7 +57,7 @@ def run_check_in(settings: Settings, client: HoyoClient) -> list[CheckInResult]:
         except Exception as exc:
             logger.error("Genshin check-in could not start: %s", exc)
 
-    if settings.enable_hsr:
+    if settings.enable_hsr_checkin:
         try:
             account = hsr.login(client, parsed.checkin_cookie, ltuid, parsed.redeem_enabled)
             result = hsr.check_in(client, account)

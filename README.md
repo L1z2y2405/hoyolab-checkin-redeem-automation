@@ -16,7 +16,7 @@ It is intended for **personal use on a single account**. It does not support ZZZ
 | Game | Check-in | Code redemption |
 |------|----------|-----------------|
 | Genshin Impact | Yes | Yes |
-| Honkai: Star Rail | Optional (`ENABLE_HSR_CHECKIN`) | Yes |
+| Honkai: Star Rail | Yes | Yes |
 
 ## Requirements
 
@@ -131,7 +131,7 @@ Run check-in and code redemption once per day on GitHub-hosted runners.
 1. Push this repository to GitHub.
 2. Add repository secret **`HOYOLAB_COOKIE`** (Settings → Secrets and variables → Actions) with the same cookie string used in `.env`.
 3. The workflow in `.github/workflows/daily.yml` runs daily at **07:00 ICT (UTC+7)** and can also be triggered manually (**Actions → Daily HoYoLAB Automation → Run workflow**).
-4. GitHub Actions currently runs **Genshin check-in + Genshin/HSR code redemption**. HSR daily check-in is off (`ENABLE_HSR_CHECKIN=false`).
+4. GitHub Actions currently runs **Genshin and HSR check-in + Genshin/HSR code redemption**.
 
 Processed redemption codes are cached between runs via GitHub Actions cache (`data/state.json`).
 

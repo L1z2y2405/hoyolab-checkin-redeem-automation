@@ -2,8 +2,7 @@ name: Daily HoYoLAB Automation
 
 on:
   schedule:
-    # 07:00 ICT (UTC+7) — Genshin check-in + Genshin/HSR code redeem
-    # HSR daily check-in is disabled (ENABLE_HSR_CHECKIN=false)
+    # 07:00 ICT (UTC+7) — Genshin/HSR check-in + Genshin/HSR code redeem
     - cron: "0 0 * * *"
   workflow_dispatch:
 
@@ -33,7 +32,7 @@ jobs:
           HOYOLAB_COOKIE: ${{ secrets.HOYOLAB_COOKIE }}
           ENABLE_GENSHIN: "true"
           ENABLE_HSR: "true"
-          ENABLE_HSR_CHECKIN: "false"
+          ENABLE_HSR_CHECKIN: "true"
           ENABLE_HSR_REDEEM: "true"
           LOG_LEVEL: INFO
         run: hoyo-auto run
